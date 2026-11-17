@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DueDate Buddy - Important Date Reminder</title>
+    <link rel="stylesheet" href="cssbuddy.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <span class="logo">📅</span>
+            <div>
+                <h1>DueDate Buddy</h1>
+                <p>Your friendly deadline reminder</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h2>Stay organized, stay on time!</h2>
+            <p>Never forget an important date again.</p>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <h4>📌 Total Reminders</h4>
+                <h2 id="totalCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h4>⏰ Upcoming</h4>
+                <h2 id="upcomingCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h4>⚠️ Overdue</h4>
+                <h2 id="overdueCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h4>✅ Completed</h4>
+                <h2 id="completedCount">0</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>➕ Add Important Date</h2>
+
+            <form id="reminderForm">
+                <label for="title">Reminder Title</label>
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="e.g. Submit JavaScript Project"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="category">Category</label>
+                <select id="category" required>
+                    <option value="Assignment">Assignment</option>
+                    <option value="Project">Project</option>
+                    <option value="Exam">Exam</option>
+                    <option value="Event">Event</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="dueDate">Due Date</label>
+                <input type="date" id="dueDate" required>
+
+                <label for="description">Description (Optional)</label>
+                <textarea
+                    id="description"
+                    placeholder="Add some details..."
+                    rows="3"
+                    maxlength="500"
+                ></textarea>
+
+                <button type="submit" class="add-btn">
+                    + Add Reminder
+                </button>
+            </form>
+
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel">
+            <h2>📋 My Reminders</h2>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="🔍 Search reminders..."
+                aria-label="Search reminders"
+            >
+
+            <div class="filters">
+                <button type="button" class="filter-btn active" data-filter="all">
+                    All
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="upcoming">
+                    Upcoming
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="overdue">
+                    Overdue
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="completed">
+                    Completed
+                </button>
+            </div>
+
+            <div id="reminderList" class="reminder-list"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 DueDate Buddy | ROSE CAÑEZA 💜</p>
+    </footer>
+
+    <script src="javabuddy.js"></script>
+</body>
+</html>
